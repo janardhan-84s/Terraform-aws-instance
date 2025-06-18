@@ -17,3 +17,17 @@ You can create EC2 instance in joindevops using this module
 * instance_id - Instance ID of the instance created
 
 Note: Module developers always should expose the outputs.
+
+## syntax of a module
+
+module "roboshop" {
+	source = "../terraform-aws-instance"
+	# mandatory variable values should be supplied
+	var-name = value
+	# you can also override default variables
+}
+
+output "instance_id"{
+	module.roboshop.instance_id # you will get instance_id as output
+}
+
